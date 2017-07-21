@@ -8,25 +8,39 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Dashboard <span class="sr-only">(current)</span></a>
+          <a class="nav-link" :href="url.dashboard">Dashboard <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">File Request</a>
+          <a class="nav-link" :href="url.request">File Request</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Send Files</a>
+          <a class="nav-link" :href="url.send">Send Files</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">History</a>
+          <a class="nav-link" :href="url.history">History</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">User Management</a>
+          <a class="nav-link" :href="url.userAll">User Management</a>
         </li>
       </ul>
     </div>
   </nav>
 </template>
 
-<script></script>
+<script>
+  export default {
+    data: function () {
+      return {
+        url: {
+          dashboard: laroute.route('dashboard'),
+          request: laroute.route('requests.get'),
+          send: laroute.route('requests.send'),
+          history: laroute.route('history'),
+          userAll: laroute.route('users.all')
+        }
+      }
+    }
+  }
+</script>
 
 <style></style>

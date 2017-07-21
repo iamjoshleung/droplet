@@ -13,5 +13,24 @@
 
 Route::get('/', function () {
     return view('dashboard');
-});
+})->name('dashboard');
 
+Route::get('/history', function () {
+  return 'history';
+})->name('history');
+
+Route::get('/requests/get', function () {
+  return 'File Requests';
+})->name('requests.get');
+
+Route::get('/requests/send', function () {
+  return 'Send Files';
+})->name('requests.send');
+
+Route::get('/users/create', function () {
+  return 'Create a user';
+})->name('users.create');
+
+Route::get('/users', function () {
+  return 'All users';
+})->name('users.all');

@@ -17,6 +17,7 @@
             @yield('content')
         </div>
 
+        <script type="text/javascript" src="{{ asset('js/laroute.js') }}"></script>
         <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
     </body>
 </html>
