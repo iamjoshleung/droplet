@@ -1,5 +1,5 @@
 @extends('layouts/master')
 
 @section('content')
-    <app-dashboard />
+    <app-dashboard :url="url" />
 @endsection

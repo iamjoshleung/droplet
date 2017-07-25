@@ -22,5 +22,14 @@ Vue.component('navbox', require('./components/Navbox.vue'));
 Vue.component(Vodal.name, Vodal);
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    data: {
+      url: {
+        dashboard: laroute.route('dashboard'),
+        request: laroute.route('requests.get'),
+        send: laroute.route('requests.send'),
+        history: laroute.route('history'),
+        userAll: laroute.route('users.all')
+      }
+    }
 });

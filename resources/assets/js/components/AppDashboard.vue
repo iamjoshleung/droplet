@@ -1,6 +1,6 @@
 <template>
   <div>
-    <header-top />
+    <header-top :url="url"></header-top>
     <div class="container-fluid">
       <div class="row">
         <div class="col-12 col-md-4">
@@ -18,15 +18,16 @@
           </vodal>
         </div>
         <div class="col-12 col-md-4">
-          <navbox title="History" message="View all the requests you have made, and download the files of any request." btnText="View file request history" type="normal" btnLink="http://www.google.com" />
+          <navbox title="History" message="View all the requests you have made, and download the files of any request." btnText="View file request history" type="normal" :btnLink="url.history" />
         </div>
-      </div>  
+      </div>
     </div>
   </div>
 </template>
 
 <script>
   export default {
+    props: ["url"],
     data () {
       return {
         isRequestModal: false,
@@ -45,7 +46,7 @@
 </script>
 
 <style>
-  
+
 
   .container-fluid {
     margin-top: 2rem;

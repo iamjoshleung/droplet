@@ -6,7 +6,7 @@
     <a class="navbar-brand" href="#">Droplet</a>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
+      <ul class="navbar-nav">
         <li class="nav-item active">
           <a class="nav-link" :href="url.dashboard">Dashboard <span class="sr-only">(current)</span></a>
         </li>
@@ -29,18 +29,12 @@
 
 <script>
   export default {
-    data: function () {
-      return {
-        url: {
-          dashboard: laroute.route('dashboard'),
-          request: laroute.route('requests.get'),
-          send: laroute.route('requests.send'),
-          history: laroute.route('history'),
-          userAll: laroute.route('users.all')
-        }
-      }
-    }
+    props: ["url"]
   }
 </script>
 
-<style></style>
+<style>
+  .navbar-collapse {
+    justify-content: flex-end;
+  }
+</style>
